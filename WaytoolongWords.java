@@ -2,11 +2,11 @@ import java.util.*;
 public class WaytoolongWords {
     public static void main(String[] args){
         Scanner in = new Scanner(System.in);
-        WaytoolongWords wyt= new WaytoolongWords();
+        WaytoolongWords wytl= new WaytoolongWords();
         int time = in.nextInt();
         while(time>=0){
             String i = in.nextLine();
-            System.out.println(wyt.codeword(i));
+            System.out.println(wytl.codeword(i));
             time--;
 
         }
