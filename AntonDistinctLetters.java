@@ -14,7 +14,7 @@ public class AntonDistinctLetters {
         
         // Remove the curly braces and spaces from the input
         input = input.substring(1, input.length() - 1); // remove the first and last characters '{}'
-        input = input.replace(" ", ""); // remove all spaces
+        input = input.replace(" ", ""); 
 
         // Handle the case of an empty set
         if (input.isEmpty()) {
