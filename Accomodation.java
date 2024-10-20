@@ -13,7 +13,7 @@ public class Accomodation {
             int q = in.nextInt();
             if(q-p>=2) count++;
         }
-        return count;
+        return count; // returns count
     }
     
 }
