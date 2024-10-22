@@ -1,0 +1,60 @@
+class GfG {
+    /* The function returns an array of strings
+    present in the dictionary which matches
+    the string pattern.
+    You are required to complete this method */
+    public static ArrayList<String> findMatchedWords(int n, ArrayList<String> dict,
+                                                     String pattern) {
+        // add code here.
+        int dictSize = dict.size();
+        int pattSize = pattern.length();
+        
+        ArrayList<String> finalList = new ArrayList<>();
+        
+        Map<Character,Integer> pMap = new LinkedHashMap<>();
+        for(int i = 0 ;i < pattSize;i++) {
+            char currentChar = pattern.charAt(i);
+            if(pMap.containsKey(currentChar)) {
+                pMap.put(currentChar, pMap.get(currentChar) + 1);
+            }
+            else {
+                pMap.put(currentChar,1);
+            }
+        }
+        
+        
+        for(int i = 0 ; i<dictSize; i++) {
+            
+            Map<Character,Integer> sMap = new LinkedHashMap<>();
+            
+            String current = dict.get(i);
+            
+            for(int j = 0 ;j < current.length();j++) {
+                
+                char currentChar = current.charAt(j);
+                if(sMap.containsKey(currentChar)) {
+                    sMap.put(currentChar, sMap.get(currentChar) + 1);
+                }
+                else {
+                    sMap.put(currentChar,1);
+                }
+            }
+            
+            if(pMap.size() == sMap.size()) {
+                
+                String pMapValues = pMap.values().toString();
+                String sMapValues = sMap.values().toString();
+                
+                if(sMapValues.equals(pMapValues)) {
+                    finalList.add(current);
+                }
+                    
+            }
+            
+            
+        }
+        return finalList;
+    }
+}
+//Match specific pattern
+//Given a dictionary of words and a pattern. Every character in the pattern is uniquely mapped to a character in the dictionary. Find all such words in the dictionary that match the given pattern. 
